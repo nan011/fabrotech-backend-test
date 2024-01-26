@@ -10,7 +10,6 @@ import * as winston from 'winston';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GameModule } from './game/game.module';
-import path from 'path';
 import { FileLoggerMiddleware } from './middlewares/file.logger';
 
 

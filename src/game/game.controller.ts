@@ -9,7 +9,7 @@ export class GameController {
     constructor(private gameService: GameService) {}
 
     @UseGuards(AuthGuard)
-    @Throttle({ default: { limit: 1, ttl: 5000 } })
+    @Throttle({ default: { limit: 1, ttl: 1000 } })
     @Post('scores')
     submitScore(@Body() body: ScoreDto): Promise<ScoreDto> {
         return this.gameService.addScore(body)
