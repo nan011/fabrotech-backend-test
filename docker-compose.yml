@@ -10,19 +10,17 @@ services:
     depends_on:
       - db
     environment:
-      DB_HOST: postgres
+      DB_HOST: db
       DB_PORT: 5432
-      DB_USERNAME: test_user
-      DB_PASSWORD: test_password
-      DB_NAME: test_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
     volumes:
-      - ./src:/usr/src/app/src
+      - ./:/usr/src/app
 
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: test_user
-      POSTGRES_PASSWORD: test_password
-      POSTGRES_DB: test_db
+      POSTGRES_PASSWORD: postgres
     volumes:
       - ./pgdata:/var/lib/postgresql/data

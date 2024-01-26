@@ -1,10 +1,11 @@
 FROM node:16-alpine
 WORKDIR /usr/src/app
-COPY . .
+COPY package.json pnpm-lock.yaml ./
+COPY ./src ./src
 
 RUN npm install -g pnpm
 RUN pnpm install
 
 EXPOSE 3000
 
-CMD ["pnpm", "run", "start:prod"]
+CMD ["pnpm", "run", "start"]
